@@ -4,5 +4,7 @@ scalar Date
 type Query {
   # Version
   version: String!
-  
+
+  # Country
+  weather(country: String!) : CountryWeather!
 }

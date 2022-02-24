@@ -6,6 +6,11 @@ const port = process.env.PORT
 const secret = process.env.SECRET
 const version = process.env.VERSION
 
+const api = {
+  host: process.env.API_HOST,
+  key: process.env.API_KEY
+}
+
 // Different situations
 const env = {
   development: process.env.NODE_ENV === 'development',
@@ -23,4 +28,4 @@ const db = {
   port: process.env.DB_PORT
 }
 
-export { port, env, secret, db, version }
+export { port, env, secret, db, version, api }
