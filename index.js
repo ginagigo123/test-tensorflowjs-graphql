@@ -2,9 +2,10 @@ import { httpServer, app } from './app'
 import { port } from './config/environment'
 import graphqlServer from './graphql'
 import connectionDB from './database'
+
 const main = async () => {
   try {
-    await connectionDB()
+    await connectionDB
 
     await graphqlServer.start()
     graphqlServer.applyMiddleware({ app, path: '/graphql' })

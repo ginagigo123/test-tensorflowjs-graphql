@@ -2,6 +2,7 @@
 type Author implements Timestamps { 
   userId: ID!
   userName: String!
+  userOrder: String!
 
   # Interface required
   createdAt: Date!
@@ -11,8 +12,10 @@ type Author implements Timestamps {
 # Inputs
 input AuthorCreateInput {
   userName: String!
+  userOrder: String!
 }
 
 input AuthorUpdateInput {
   userName: String
+  userOrder: String
 }

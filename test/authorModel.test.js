@@ -9,6 +9,7 @@ describe('[AuthorModel]', () => {
   const schema = {
     userId: expect.any(Number),
     userName: expect.any(String),
+    userOrder: expect.any(String),
     createdAt: expect.any(Date),
     updatedAt: expect.any(Date)
   }
@@ -17,7 +18,7 @@ describe('[AuthorModel]', () => {
   let _userId
 
   test('Create User', async () => {
-    _userId = await AuthorModel.createUser(connectPool, { userName: createdUserName })
+    _userId = await AuthorModel.createUser(connectPool, { userName: createdUserName, userOrder: '' })
     const author = await AuthorModel.selectUser(connectPool, _userId)
     // Check Data
     expect(author).not.toBeUndefined()

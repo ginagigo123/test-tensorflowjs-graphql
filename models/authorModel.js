@@ -25,12 +25,17 @@ class AuthorModel {
   }
 
   async createUser (conn, args) {
-    let _userName = args.userName
-    if ('userName' in args) {
+    let _userName
+    let _userOrder
+
+    if ('userName' in args && 'userOrder' in args) {
       _userName = args.userName
+      _userOrder = args.userOrder
+    } else {
+      throw new Error('User Name is null')
     }
     try {
-      const query = `INSERT INTO User (userName) VALUES ('${_userName}');`
+      const query = `INSERT INTO User (userName, userOrder) VALUES ('${_userName}', '${_userOrder}');`
       const [rows, fields] = await conn.execute(query)
 
       return rows.insertId
@@ -42,9 +47,10 @@ class AuthorModel {
   async updateUser (conn, args, author) {
     const _userId = args.userId
     const _userName = author.userName
+    const _userOrder = author.userOrder
 
     try {
-      const query = `UPDATE User SET userName = '${_userName}' WHERE userId = ${_userId};`
+      const query = `UPDATE User SET userName = '${_userName}', userOrder = '${_userOrder}' WHERE userId = ${_userId};`
       const [rows, fields] = await conn.execute(query)
 
       return _userId
