@@ -1,11 +1,11 @@
 import { httpServer, app } from './app'
 import { port } from './config/environment'
 import graphqlServer from './graphql'
+import connectionDB from './database'
 
 const main = async () => {
   try {
-    // const s = new WeathermapAPI()
-    // await s.getWeather({country: 'London'})
+    await connectionDB
 
     await graphqlServer.start()
     graphqlServer.applyMiddleware({ app, path: '/graphql' })
