@@ -4,7 +4,7 @@ import { weatherQueries } from './weather'
 const resolvers = {
   Query: {
     ...versionQueries,
-    ...weatherQueries,
+    ...weatherQueries
   }
 }
 

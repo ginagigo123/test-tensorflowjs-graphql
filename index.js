@@ -1,10 +1,9 @@
 import { httpServer, app } from './app'
 import { port } from './config/environment'
 import graphqlServer from './graphql'
-import WeathermapAPI from './data/weathermap_data_source'
 
 const main = async () => {
-  try { 
+  try {
     // const s = new WeathermapAPI()
     // await s.getWeather({country: 'London'})
 
