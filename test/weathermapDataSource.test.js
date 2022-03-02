@@ -7,14 +7,14 @@ describe('[WeathermapDataSource]', () => {
     count: expect.any(Number),
     list: expect.any(Array)
   }
-
   const _country = 'London'
   const _weathermapAPI = new WeathermapAPI()
   test('Current Weather Data Model', async () => {
     const data = await _weathermapAPI.getWeather({ country: _country })
-
     // Check Type
     expect(data).toMatchObject(schema)
+    expect(data.cod).toBe('200')
+    expect(data.count).not.toBe(0)
   })
 
   // TODO: Graphal test
