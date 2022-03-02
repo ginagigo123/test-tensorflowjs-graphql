@@ -7,15 +7,4 @@ type Query {
 
   # Country Weather
   weather(country: String!) : CountryWeather!
-
-  # Author
-  authors: [Author]
-  author(userId: ID!): Author
-}
-
-type Mutation {
-  # Authors
-  createAuthor(author: AuthorCreateInput!): Author!
-  updateAuthor(userId: ID!, author: AuthorUpdateInput!): Author!
-  deleteAuthor(userId: ID!): String!
 }
