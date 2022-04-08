@@ -46,6 +46,13 @@ query Weather($country: String!) {
   }
 }
 `
+const schema = {
+  message: expect.any(String),
+  cod: expect.any(String),
+  count: expect.any(Number),
+  list: expect.any(Array)
+}
+const _country = 'London'
 
 describe('[Queries.WeatherMapAPI]', () => {
   it('Access current weather data for any location', async () => {
@@ -53,9 +60,12 @@ describe('[Queries.WeatherMapAPI]', () => {
 
     const res = await query({
       query: GET_COUNTRY_WEATHER,
-      variables: { source: 'London' }
+      variables: { country: _country }
     })
+    // Check Type
+    expect(res.data.weather).toMatchObject(schema)
+    expect(res.data.weather.cod).toBe('200')
 
-    expect(res).toMatchSnapshot()
+    expect(res.data.weather.count).not.toBe(0)
   })
 })

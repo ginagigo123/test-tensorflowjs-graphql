@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon ./index.js --exec babel-node",
-    "test": "standard --fix && jest --force-exit --detectOpenHandles"
+    "test": "standard --fix && jest --force-exit --detectOpenHandles -u"
   },
   "standard": {
     "env": [
