@@ -1,4 +1,5 @@
-# GraphQL Backend Adventure
+# Lab Apollo Server Graphql Weathermap Api
+https://docs.google.com/presentation/d/1nDaYChOJX7PAbMreHEoo22cS9mGnDC1_pcTE7_zmUPk/edit?usp=sharing
 
 ## Install
 ```bash
@@ -14,12 +15,9 @@ NODE_ENV=development
 PORT=3000
 SECRET=
 
-# Database
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_NAME=db
-DB_USER=root
-DB_PASS=1234
+# API
+API_HOST=api.openweathermap.org/data/2.5/
+API_KEY=
 
 ```
 ## Getting Started
