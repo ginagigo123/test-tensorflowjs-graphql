@@ -1,6 +1,5 @@
 # Lab Apollo Server Graphql Weathermap Api
-https://docs.google.com/presentation/d/1nDaYChOJX7PAbMreHEoo22cS9mGnDC1_pcTE7_zmUPk/edit?usp=sharing
-
+[建置流程](https://docs.google.com/presentation/d/1nDaYChOJX7PAbMreHEoo22cS9mGnDC1_pcTE7_zmUPk/edit?usp=sharing)
 ## Install
 ```bash
 $ yarn install
