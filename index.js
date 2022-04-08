@@ -4,7 +4,6 @@ import graphqlServer from './graphql'
 
 const main = async () => {
   try {
-
     await graphqlServer.start()
     graphqlServer.applyMiddleware({ app, path: '/graphql' })
 

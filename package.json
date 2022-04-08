@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon ./index.js --exec babel-node",
-    "test": "standard --fix && jest --force-exit"
+    "test": "standard --fix && jest --force-exit --detectOpenHandles"
   },
   "standard": {
     "env": [
@@ -26,8 +26,10 @@
     "@graphql-tools/schema": "^8.3.1",
     "apollo-datasource": "^3.3.1",
     "apollo-datasource-rest": "^3.5.1",
+    "apollo-server": "^3.6.7",
     "apollo-server-core": "^3.6.1",
     "apollo-server-express": "^3.6.1",
+    "apollo-server-testing": "^2.25.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "graphql": "^16.2.0",
