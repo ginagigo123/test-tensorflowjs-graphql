@@ -6,6 +6,7 @@ const schema = {
   count: expect.any(Number),
   list: expect.any(Array)
 }
+
 const _country = 'London'
 const _weathermapAPI = new WeathermapAPI()
 
