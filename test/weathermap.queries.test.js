@@ -1,9 +1,10 @@
 import { createTestClient } from 'apollo-server-testing'
 import { gql } from 'apollo-server'
 import graphqlServer from '../graphql'
+import WeathermapAPI from '../models/weathermapDataSource'
 
 const GET_COUNTRY_WEATHER = gql`
-query Weather($country: String!) {
+query Query($country: String!) {
   weather(country: $country) {
     message
     cod
@@ -46,26 +47,20 @@ query Weather($country: String!) {
   }
 }
 `
-const schema = {
-  message: expect.any(String),
-  cod: expect.any(String),
-  count: expect.any(Number),
-  list: expect.any(Array)
-}
+
 const _country = 'London'
+const _weathermapAPI = new WeathermapAPI()
 
 describe('[Queries.WeatherMapAPI]', () => {
   it('Access current weather data for any location', async () => {
+    const data = await _weathermapAPI.getWeather({ country: _country })
     const { query } = createTestClient(graphqlServer)
 
     const res = await query({
       query: GET_COUNTRY_WEATHER,
       variables: { country: _country }
     })
-    // Check Type
-    expect(res.data.weather).toMatchObject(schema)
-    expect(res.data.weather.cod).toBe('200')
 
-    expect(res.data.weather.count).not.toBe(0)
+    expect(res.data.weather).toMatchObject(data)
   })
 })

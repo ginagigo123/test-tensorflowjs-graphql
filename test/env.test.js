@@ -8,7 +8,7 @@ describe('[Environment]', () => {
     expect(secret).not.toEqual('')
   })
 
-  test('api', () => {
+  test('Api', () => {
     expect(api.host).not.toEqual('')
     expect(api.key).not.toEqual('')
   })

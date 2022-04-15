@@ -1,3 +1,4 @@
+# Weather Type
 
 type Weather {
   id: Int
@@ -47,7 +48,6 @@ type List {
   coord: Coord
 }
 
-# Types
 type CountryWeather {
   message: String
   cod: String
