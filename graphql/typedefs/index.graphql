@@ -7,4 +7,10 @@ type Query {
 
   # Country Weather
   weather(country: String!) : CountryWeather!
+
+  # Input Example
+  hello(number: Int!) : String!
+
+  # Friend
+  friends: Friends!
 }
