@@ -48,7 +48,7 @@ query Query($country: String!) {
 }
 `
 
-const _country = 'London'
+const _country = 'Hawaii'
 const _weathermapAPI = new WeathermapAPI()
 
 describe('[Queries.WeatherMapAPI]', () => {

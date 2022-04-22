@@ -7,7 +7,7 @@ const schema = {
   list: expect.any(Array)
 }
 
-const _country = 'London'
+const _country = 'Hawaii'
 const _weathermapAPI = new WeathermapAPI()
 
 describe('[Weathermap.datasource]', () => {

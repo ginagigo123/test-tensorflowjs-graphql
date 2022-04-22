@@ -8,7 +8,7 @@ const resolvers = {
     ...versionQueries,
     ...weatherQueries,
     ...friendsQueries,
-    ...helloQueries,
+    ...helloQueries
   }
 }
 
