@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.3.1",
+    "@tensorflow-models/toxicity": "^1.2.2",
+    "@tensorflow/tfjs": "^3.18.0",
     "apollo-datasource": "^3.3.1",
     "apollo-datasource-rest": "^3.5.1",
     "apollo-server": "^3.6.7",

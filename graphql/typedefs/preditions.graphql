@@ -1,0 +1,10 @@
+# Prediction Type
+type Results {
+    match: Boolean
+    probabilities: [Float]
+}
+
+type Predictions {
+    label: String
+    results: [Results]
+}

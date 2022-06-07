@@ -13,4 +13,8 @@ type Query {
 
   # Friend
   friends: Friends!
+
+  # Prediction
+  predictions(sentence: String!): Predictions!
+  
 }
