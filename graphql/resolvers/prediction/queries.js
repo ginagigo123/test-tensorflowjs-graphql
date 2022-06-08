@@ -1,6 +1,6 @@
 const predictionQueries = {
-  sentence: async (_, args, { dataSources }) => {
-    return await dataSources.weatherAPI.getPrediction({ sentence: args.sentence })
+  predictions: async (_, args, { dataSources }) => {
+    return await dataSources.weatherAPI.getPredition({ sentence: args.sentence })
   }
 }
 

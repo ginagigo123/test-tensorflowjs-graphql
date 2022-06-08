@@ -3,6 +3,8 @@ import { api } from '../config/environment'
 import '@tensorflow/tfjs'
 import * as toxicity from '@tensorflow-models/toxicity'
 
+const threshold = 0.9;
+
 class WeathermapAPI extends RESTDataSource {
   constructor () {
     super()
@@ -16,15 +18,11 @@ class WeathermapAPI extends RESTDataSource {
   }
 
   async getPredition ({ sentence }) {
-    // test
-    const threshold = 0.9;
-    response = toxicity.load(threshold).then(model => {
-      const sentences = [sentence];
-    
-      return model.classify(sentences).then(predictions => {
+    const sentences = [sentence];
+    const model = await toxicity.load(threshold)
+    const response = await model.classify(sentences).then(predictions => {
         console.log(predictions);
         return predictions
-      })
     })
     return response
   }

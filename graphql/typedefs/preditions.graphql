@@ -5,6 +5,6 @@ type Results {
 }
 
 type Predictions {
-    label: String
+    label: String!
     results: [Results]
 }
